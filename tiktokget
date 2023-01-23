@@ -86,11 +86,7 @@ while keeplooking == True:
         keeplooking = False
         n = len(vidurls)
 
-print("Downloading...")
-
-dirname = username[1:] #remove the leading '@'
-makedirs(dirname, exist_ok=True)
-chdir(dirname)
+print("Archiving...")
 
 for url in urls:
     driver.get(url)
@@ -101,17 +97,7 @@ for url in urls:
     title = p + '_' + title + '.mp4'
     print(title)
     title_len = len(title)
-    if path.exists(title):
-        pass
-    else:
-        if watermark:
-            vid = driver.find_element(By.XPATH,"//video")
-            url = vid.get_attribute("src")
-            video = requests.get(url, headers=headers)
-            with open(title, 'wb') as v:
-                v.write(video.content)
-        else:
-            system('yt-dlp -q --no-warnings -o "{}" "{}"'.format(title, url))
+    system('tubeup '(title))
     n = n - 1
 driver.quit()
 driver.quit()
