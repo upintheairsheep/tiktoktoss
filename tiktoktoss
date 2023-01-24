@@ -25,13 +25,13 @@ signal.signal(signal.SIGTERM, signal_handler)
 
 if 1 < len(sys.argv) <= 3:
     for i in range(len(sys.argv)):
-        if sys.argv[i] == '-w':
+        if sys.argv[i] == '-c':
             watermark=True
         else:
             username=sys.argv[i]
 else:
     print("""
-Usage: tiktoktoss username
+Usage: tiktoktoss username (-c for cookie file (private accounts) )
 """)
     exit(1)
 
