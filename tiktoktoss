@@ -31,10 +31,7 @@ if 1 < len(sys.argv) <= 3:
             username=sys.argv[i]
 else:
     print("""
-Usage: tiktokget username
-         or
-       tiktokget -w username
-         to download with a watermark
+Usage: tiktoktoss username
 """)
     exit(1)
 
